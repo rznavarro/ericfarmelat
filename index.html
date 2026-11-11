@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eric Farmelant | Miami Luxury Real Estate</title>
+<meta name="description" content="Eric Farmelant, Broker Associate at Compass in Coconut Grove. Luxury homes, new construction and relocation across Miami. English and Spanish.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0c0f12">
+<link rel="icon" href="assets/logo-white.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0f12; --bg2:#141a1f; --bg3:#1b232a;
+  --brand:#c9a96b; --brand-ink:#14100a; --accent:#6fb6b0;
+  --text:#f2eee6; --muted:#aeb4b8; --line:rgba(242,238,230,.14);
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --gut:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{padding-inline:var(--gut);max-width:1360px;margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brand);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border-radius:2px;font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:transform .25s,background .25s,color .25s,border-color .25s}
+.btn-primary{background:var(--brand);color:var(--brand-ink)}
+.btn-primary:hover{background:#dcbf85;transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(242,238,230,.45);color:var(--text)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+
+/* top bar */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px var(--gut);background:linear-gradient(#0c0f12cc,transparent)}
+.top.solid{background:rgba(12,15,18,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+@media (max-width:899px){.hero-in{padding-bottom:110px}.top .tag{display:none}.top{justify-content:flex-end}}
+.top .tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.lang{display:flex;border:1px solid var(--line);border-radius:2px;background:#0c0f12aa;backdrop-filter:blur(6px)}
+.lang button{min-width:48px;min-height:44px;background:none;border:0;color:var(--muted);font:600 13px var(--sans);letter-spacing:.1em;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.slides{position:absolute;inset:0;z-index:-2}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.8s ease,transform 9s ease-out}
+.slides img.on{opacity:1;transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,15,18,.72) 0%,rgba(12,15,18,.2) 60%,rgba(12,15,18,.1) 100%),linear-gradient(180deg,rgba(12,15,18,.5) 0%,rgba(12,15,18,.1) 35%,rgba(12,15,18,.9) 100%)}
+.hero-in{padding:120px var(--gut) clamp(48px,8vh,96px);max-width:1360px;margin-inline:auto;width:100%}
+.hero-logo{width:clamp(210px,26vw,360px);height:auto;margin-bottom:28px}
+.hero h1{font-size:clamp(40px,6.6vw,92px);max-width:15ch;margin-bottom:22px}
+.hero h1 em{color:var(--brand);font-style:italic}
+.hero p.sub{max-width:52ch;color:#dcd8d0;font-size:clamp(16px,1.5vw,19px);margin-bottom:34px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.dots{position:absolute;right:var(--gut);bottom:clamp(48px,8vh,96px);display:flex;gap:10px}
+.dots span{width:34px;height:2px;background:rgba(242,238,230,.3);transition:background .4s}
+.dots span.on{background:var(--brand)}
+
+/* stats */
+.stats{background:var(--bg2);border-block:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:34px 20px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font:500 clamp(34px,4vw,54px)/1 var(--serif);color:var(--brand)}
+.stat span{font-size:13px;color:var(--muted);letter-spacing:.04em}
+.stats small{display:block;padding:0 0 18px;font-size:12px;color:var(--muted)}
+
+/* sections */
+section{position:relative}
+.pad{padding:clamp(72px,10vw,140px) 0}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(34px,4.6vw,64px);max-width:16ch;margin-top:12px}
+.sec-head p{max-width:42ch;color:var(--muted)}
+
+/* gallery */
+.gal{background:var(--bg)}
+.gal-pin{overflow:hidden}
+.track{display:flex;gap:28px;padding-inline:var(--gut);width:max-content}
+.card{position:relative;flex:0 0 clamp(300px,34vw,520px);text-decoration:none;display:block;background:var(--bg2);border:1px solid var(--line)}
+.card .ph{aspect-ratio:4/3;overflow:hidden}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.card:hover img{transform:scale(1.05)}
+.card .meta{padding:22px 24px 26px}
+.card .st{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.card h3{font-size:30px;margin:8px 0 2px}
+.card .loc{color:var(--muted);font-size:14px}
+.card .pr{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font:500 24px var(--serif)}
+.card .pr i{font:600 12px var(--sans);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.gal-note{padding:28px var(--gut) 0;color:var(--muted);font-size:13px;max-width:1360px;margin-inline:auto}
+@media (max-width:899px){
+  .gal-pin{overflow:visible}
+  .scroller{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:12px}
+  .track{gap:16px}
+  .card{flex-basis:82vw;scroll-snap-align:center}
+}
+
+/* zones */
+.zones{background:var(--bg2)}
+.zlist{list-style:none;border-top:1px solid var(--line)}
+.zlist a{display:flex;justify-content:space-between;align-items:center;min-height:68px;padding:10px 4px;border-bottom:1px solid var(--line);text-decoration:none;font:500 clamp(24px,3vw,38px)/1.1 var(--serif);transition:padding .3s,color .3s}
+.zlist a span{font:600 12px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .3s}
+.zlist a:hover{padding-left:18px;color:var(--brand)}
+.zlist a:hover span{color:var(--brand)}
+.zgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+@media (max-width:899px){.zgrid{grid-template-columns:1fr}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,96px);align-items:start}
+.portrait{position:relative}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;filter:saturate(.95)}
+.portrait::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--brand);z-index:-1}
+.about h2{font-size:clamp(36px,4.6vw,66px);margin:12px 0 22px}
+.about p{color:#d6d2ca;max-width:58ch;margin-bottom:22px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:18px 32px;margin:30px 0}
+.facts div{border-top:1px solid var(--line);padding-top:12px}
+.facts dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brand);font-weight:700}
+.facts dd{font-size:15px;color:#e6e2da}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:70px}
+.rev{padding:28px;border:1px solid var(--line);background:var(--bg2)}
+.rev q{display:block;font:italic 400 24px/1.3 var(--serif);quotes:"\201C" "\201D"}
+.rev cite{display:block;margin-top:16px;font-style:normal;font-size:13px;color:var(--muted);letter-spacing:.06em}
+.rev-note{margin-top:18px;font-size:13px;color:var(--muted)}
+@media (max-width:899px){.about-grid{grid-template-columns:1fr}.reviews{grid-template-columns:1fr}.portrait{max-width:420px}.stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0}.stat{border-top:1px solid var(--line)}.stat:nth-child(-n+2){border-top:0}}
+
+/* contact */
+.contact{background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
+.contact h2{font-size:clamp(38px,6vw,84px);max-width:16ch;margin:14px auto 22px}
+.contact p.lead{color:var(--muted);max-width:50ch;margin:0 auto 34px}
+.cta.c{justify-content:center}
+.cinfo{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 40px;margin-top:44px;font-size:16px}
+.cinfo a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center;border-bottom:1px solid var(--line)}
+.cinfo a:hover{color:var(--brand);border-color:var(--brand)}
+.social{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
+.social a{min-height:44px;padding:0 18px;display:inline-flex;align-items:center;border:1px solid var(--line);font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+.social a:hover{color:var(--brand);border-color:var(--brand)}
+
+footer{padding:40px 0 110px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+footer img{height:64px;width:auto}
+footer p{max-width:62ch}
+
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 24px;border-radius:40px;background:var(--brand);color:var(--brand-ink);font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.fab svg{width:20px;height:20px}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .slides img{transition:opacity .01s;transform:none}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"RealEstateAgent",
+  "name":"Eric Farmelant",
+  "jobTitle":"Broker Associate",
+  "telephone":"+1-954-850-3905",
+  "email":"eric.farmelant@compass.com",
+  "url":"https://www.compass.com/agents/eric-farmelant/",
+  "image":"assets/eric.webp",
+  "worksFor":{"@type":"Organization","name":"Compass"},
+  "knowsLanguage":["English","Spanish"],
+  "areaServed":["Coconut Grove","Coral Gables","Shenandoah","The Roads","Silver Bluff","Brickell","Miami Beach","South Miami","Downtown Miami","Miami Shores","Pinecrest","Key Biscayne"],
+  "address":{"@type":"PostalAddress","addressLocality":"Miami","addressRegion":"FL","addressCountry":"US"},
+  "sameAs":["https://www.instagram.com/ericfarmelant_realestate/","https://www.linkedin.com/in/eric-farmelant-94a25611/","https://www.yelp.com/biz/eric-farmelant-ibis-realty-group-miami-7","https://g.co/kgs/KuEvsL"]
+}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <span class="tag" data-i18n="tag">Compass · Coconut Grove</span>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="es" aria-pressed="false">ES</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <div class="slides" aria-hidden="true">
+    <img class="on" src="assets/hero630.webp" alt="" width="2000" height="1677" fetchpriority="high">
+    <img src="assets/hero4146.webp" alt="" width="2000" height="1888">
+    <img src="assets/hero2240.webp" alt="" width="2000" height="1687">
+  </div>
+  <div class="hero-in">
+    <img class="hero-logo" src="assets/logo-white.webp" alt="Eric Farmelant, Real Estate, Miami" width="830" height="711">
+    <h1 data-i18n-html="h1">Miami, from the <em>Grove</em> to Key Biscayne.</h1>
+    <p class="sub" data-i18n="sub">Luxury homes, new construction and relocation with a Broker Associate at Compass who is also a Florida Bar licensed attorney.</p>
+    <div class="cta">
+      <a class="btn btn-primary" data-wa="hero" href="#" target="_blank" rel="noopener" data-i18n="ctaWa">Message on WhatsApp</a>
+      <a class="btn btn-ghost" href="#homes" data-i18n="ctaHomes">View recent transactions</a>
+    </div>
+  </div>
+  <div class="dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+</section>
+
+<section class="stats" aria-label="Track record">
+  <div class="wrap">
+    <div class="stat"><b>$100M+</b><span data-i18n="s1">Lifetime transactions</span></div>
+    <div class="stat"><b>500+</b><span data-i18n="s2">Transactions represented</span></div>
+    <div class="stat"><b>12+</b><span data-i18n="s3">Years in real estate</span></div>
+    <div class="stat"><b>EN · ES</b><span data-i18n="s4">Languages</span></div>
+  </div>
+  <div class="wrap"><small data-i18n="sNote">Figures as stated on Eric's Compass profile.</small></div>
+</section>
+
+<section class="gal pad" id="homes">
+  <div class="wrap sec-head rv">
+    <div><span class="eyebrow" data-i18n="gEye">Recent transactions</span>
+    <h2 data-i18n="gH">Homes Eric has represented</h2></div>
+    <p data-i18n="gP">Each card opens the original listing page on Compass.</p>
+  </div>
+  <div class="gal-pin" id="galPin">
+    <div class="scroller">
+      <div class="track" id="track">
+        <a class="card" href="https://www.compass.com/homedetails/1867-SW-14th-Ter-Miami-FL-33145/1DQPEJ_pid/" target="_blank" rel="noopener"><div class="ph"><img src="assets/p1867.webp" alt="Pool and patio at 1867 SW 14th Terrace, Miami" width="1498" height="951"></div><div class="meta"><span class="st" data-i18n="pending">Pending</span><h3>1867 SW 14th Terrace</h3><div class="loc">Miami, FL 33145</div><div class="pr">$1,395,000<i data-i18n="view">View listing</i></div></div></a>
+        <a class="card" href="https://www.compass.com/homedetails/3620-Curtis-Ln-Miami-FL-33133/1556569315074646753_lid/" target="_blank" rel="noopener"><div class="ph"><img src="assets/p3620.webp" alt="Vaulted-ceiling dining room at 3620 Curtis Lane, Miami" width="1500" height="951"></div><div class="meta"><span class="st" data-i18n="past">Past sale</span><h3>3620 Curtis Lane</h3><div class="loc">Miami, FL 33133</div><div class="pr">$4,380,000<i data-i18n="view">View listing</i></div></div></a>
+        <a class="card" href="https://www.compass.com/homedetails/630-University-Dr-Coral-Gables-FL-33134/1252976607374800721_lid/" target="_blank" rel="noopener"><div class="ph"><img src="assets/p630.webp" alt="Pool at dusk, 630 University Drive, Coral Gables" width="1500" height="951"></div><div class="meta"><span class="st" data-i18n="past">Past sale</span><h3>630 University Drive</h3><div class="loc">Coral Gables, FL 33134</div><div class="pr">$3,700,000<i data-i18n="view">View listing</i></div></div></a>
+        <a class="card" href="https://www.compass.com/homedetails/145-W-Sunrise-Ave-Coral-Gables-FL-33133/2150169625451853409_lid/" target="_blank" rel="noopener"><div class="ph"><img src="assets/p145.webp" alt="Front facade of 145 West Sunrise Avenue, Coral Gables" width="1500" height="951"></div><div class="meta"><span class="st" data-i18n="past">Past sale</span><h3>145 West Sunrise Avenue</h3><div class="loc">Coral Gables, FL 33133</div><div class="pr">$3,525,000<i data-i18n="view">View listing</i></div></div></a>
+        <a class="card" href="https://www.compass.com/homedetails/545-SW-29th-Rd-Miami-FL-33129/1561770958079658993_lid/" target="_blank" rel="noopener"><div class="ph"><img src="assets/p545.webp" alt="Pool and garden at 545 SW 29th Road, Miami" width="1500" height="830"></div><div class="meta"><span class="st" data-i18n="past">Past sale</span><h3>545 SW 29th Road</h3><div class="loc">Miami, FL 33129</div><div class="pr">$3,450,000<i data-i18n="view">View listing</i></div></div></a>
+        <a class="card" href="https://www.compass.com/homedetails/2870-N-Ocean-Dr-Hollywood-FL-33019/806437454773698601_lid/" target="_blank" rel="noopener"><div class="ph"><img src="assets/p2870.webp" alt="Waterfront living room at 2870 North Ocean Drive, Hollywood" width="1500" height="951"></div><div class="meta"><span class="st" data-i18n="past">Past sale</span><h3>2870 North Ocean Drive</h3><div class="loc">Hollywood, FL 33019</div><div class="pr">$2,821,750<i data-i18n="view">View listing</i></div></div></a>
+        <a class="card" href="https://www.compass.com/homedetails/360-Ocean-Dr-Unit-205S-Key-Biscayne-FL-33149/1286946848480219649_lid/" target="_blank" rel="noopener"><div class="ph"><img src="assets/p360kb.webp" alt="Open kitchen and living area at 360 Ocean Drive, Key Biscayne" width="1500" height="951"></div><div class="meta"><span class="st" data-i18n="past">Past sale</span><h3>360 Ocean Drive, 205S</h3><div class="loc">Key Biscayne, FL 33149</div><div class="pr">$2,700,000<i data-i18n="view">View listing</i></div></div></a>
+        <a class="card" href="https://www.compass.com/homedetails/4146-Poinciana-Ave-Coconut-Grove-FL-33133/921685313046579641_lid/" target="_blank" rel="noopener"><div class="ph"><img src="assets/p4146.webp" alt="Home and pool at dusk, 4146 Poinciana Avenue, Coconut Grove" width="1500" height="1070"></div><div class="meta"><span class="st" data-i18n="past">Past sale</span><h3>4146 Poinciana Avenue</h3><div class="loc">Coconut Grove, FL 33133</div><div class="pr">$2,450,000<i data-i18n="view">View listing</i></div></div></a>
+        <a class="card" href="https://www.compass.com/homedetails/6205-SW-67th-Ct-South-Miami-FL-33143/809296172339556329_lid/" target="_blank" rel="noopener"><div class="ph"><img src="assets/p6205.webp" alt="Paver driveway and home at 6205 SW 67th Court, South Miami" width="1500" height="951"></div><div class="meta"><span class="st" data-i18n="past">Past sale</span><h3>6205 SW 67th Court</h3><div class="loc">South Miami, FL 33143</div><div class="pr">$2,250,000<i data-i18n="view">View listing</i></div></div></a>
+        <a class="card" href="https://www.compass.com/homedetails/2240-Tequesta-Ln-Miami-FL-33133/2032938022741303681_lid/" target="_blank" rel="noopener"><div class="ph"><img src="assets/p2240.webp" alt="Patio and pool at dusk, 2240 Tequesta Lane, Miami" width="1500" height="957"></div><div class="meta"><span class="st" data-i18n="past">Past sale</span><h3>2240 Tequesta Lane</h3><div class="loc">Miami, FL 33133</div><div class="pr">$2,100,000<i data-i18n="view">View listing</i></div></div></a>
+      </div>
+    </div>
+  </div>
+  <p class="gal-note" data-i18n="gNote">A selection of listings shown on Eric's Compass profile. Photos and prices belong to the original listings.</p>
+</section>
+
+<section class="zones pad" id="zones">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="eyebrow" data-i18n="zEye">Neighborhoods</span>
+      <h2 data-i18n="zH">Where Eric works</h2></div>
+      <p data-i18n="zP">Areas named in Eric's profile. Tap one to ask him about it.</p>
+    </div>
+    <ul class="zlist zgrid rv" id="zlist"></ul>
+  </div>
+</section>
+
+<section class="about pad" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="portrait rv"><img src="assets/eric.webp" alt="Portrait of Eric Farmelant" width="1000" height="1000"></div>
+      <div class="rv">
+        <span class="eyebrow" data-i18n="aEye">About Eric</span>
+        <h2 data-i18n="aH">A lawyer's eye for every contract.</h2>
+        <p data-i18n="aP1">Eric Farmelant is a Broker Associate in Compass's Coconut Grove office and a founding member of the Ibis Group team. He practiced as an attorney before starting his real estate career in 2014.</p>
+        <p data-i18n="aP2">He works with buyers, sellers and listing clients in luxury real estate, new construction and relocation, and is a Military Residential Specialist (MilRES).</p>
+        <dl class="facts">
+          <div><dt data-i18n="f1">Education</dt><dd data-i18n="f1v">University of Miami, BBA '07 and J.D. '10 (both cum laude)</dd></div>
+          <div><dt data-i18n="f2">Licenses</dt><dd data-i18n="f2v">Florida Bar attorney (2010), real estate sales associate (2013), broker (2016)</dd></div>
+          <div><dt data-i18n="f3">Languages</dt><dd data-i18n="f3v">English, Spanish</dd></div>
+          <div><dt data-i18n="f4">Recognition</dt><dd data-i18n="f4v">Miami Herald Miami-Dade Favorites "Favorite" Real Estate Agent 2023, 2024, 2025. RealTrends Verified Agent 2025 and 2026 (Top 1.5%).</dd></div>
+        </dl>
+        <a class="btn btn-ghost" href="https://www.compass.com/agents/eric-farmelant/" target="_blank" rel="noopener" data-i18n="fullProfile">Full profile on Compass</a>
+      </div>
+    </div>
+    <div class="reviews rv">
+      <figure class="rev"><q lang="en">His knowledge of the Miami market is unparalleled</q><cite>Fabio V.</cite></figure>
+      <figure class="rev"><q lang="en">Eric priced us appropriately and we got full price in literally one day.</q><cite>Sarah C.</cite></figure>
+      <figure class="rev"><q lang="en">He goes above and beyond every step of the way.</q><cite>Linda Y.</cite></figure>
+    </div>
+    <p class="rev-note" data-i18n="revNote">Excerpts from client reviews on Compass.</p>
+  </div>
+</section>
+
+<section class="contact pad" id="contact">
+  <div class="wrap rv">
+    <span class="eyebrow" data-i18n="cEye">Contact</span>
+    <h2 data-i18n="cH">Let's talk about your next move.</h2>
+    <p class="lead" data-i18n="cP">Write to Eric on WhatsApp, call, or send an email. He speaks English and Spanish.</p>
+    <div class="cta c">
+      <a class="btn btn-primary" data-wa="contact" href="#" target="_blank" rel="noopener" data-i18n="ctaWa">Message on WhatsApp</a>
+      <a class="btn btn-ghost" href="tel:+19548503905">954-850-3905</a>
+    </div>
+    <div class="cinfo">
+      <a href="mailto:eric.farmelant@compass.com">eric.farmelant@compass.com</a>
+    </div>
+    <div class="social">
+      <a href="https://www.instagram.com/ericfarmelant_realestate/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/eric-farmelant-94a25611/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.yelp.com/biz/eric-farmelant-ibis-realty-group-miami-7" target="_blank" rel="noopener">Yelp</a>
+      <a href="https://g.co/kgs/KuEvsL" target="_blank" rel="noopener">Google</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-white.webp" alt="Eric Farmelant, Real Estate, Miami" width="830" height="711">
+    <p data-i18n="foot">Design demo. Information and listings come from Eric Farmelant's public Compass profile. Eric Farmelant is a Broker Associate with Compass.</p>
+  </div>
+</footer>
+
+<a class="fab" data-wa="fab" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3L3 21z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.400-2.400-2.400l.8-1-1-2-1.900.6z"/></svg>
+  <span data-i18n="fab">WhatsApp</span>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var PHONE='19548503905';
+  var I18N={
+    en:{
+      tag:'Compass · Coconut Grove',
+      h1:'Miami, from the <em>Grove</em> to Key Biscayne.',
+      sub:'Luxury homes, new construction and relocation with a Broker Associate at Compass who is also a Florida Bar licensed attorney.',
+      ctaWa:'Message on WhatsApp', ctaHomes:'View recent transactions',
+      s1:'Lifetime transactions', s2:'Transactions represented', s3:'Years in real estate', s4:'Languages',
+      sNote:"Figures as stated on Eric's Compass profile.",
+      gEye:'Recent transactions', gH:'Homes Eric has represented', gP:'Each card opens the original listing page on Compass.',
+      pending:'Pending', past:'Past sale', view:'View listing',
+      gNote:"A selection of listings shown on Eric's Compass profile. Photos and prices belong to the original listings.",
+      zEye:'Neighborhoods', zH:'Where Eric works', zP:"Areas named in Eric's profile. Tap one to ask him about it.", zAsk:'Ask Eric',
+      aEye:'About Eric', aH:"A lawyer's eye for every contract.",
+      aP1:"Eric Farmelant is a Broker Associate in Compass's Coconut Grove office and a founding member of the Ibis Group team. He practiced as an attorney before starting his real estate career in 2014.",
+      aP2:'He works with buyers, sellers and listing clients in luxury real estate, new construction and relocation, and is a Military Residential Specialist (MilRES).',
+      f1:'Education', f1v:"University of Miami, BBA '07 and J.D. '10 (both cum laude)",
+      f2:'Licenses', f2v:'Florida Bar attorney (2010), real estate sales associate (2013), broker (2016)',
+      f3:'Languages', f3v:'English, Spanish',
+      f4:'Recognition', f4v:'Miami Herald Miami-Dade Favorites "Favorite" Real Estate Agent 2023, 2024, 2025. RealTrends Verified Agent 2025 and 2026 (Top 1.5%).',
+      fullProfile:'Full profile on Compass', revNote:'Excerpts from client reviews on Compass.',
+      cEye:'Contact', cH:"Let's talk about your next move.", cP:'Write to Eric on WhatsApp, call, or send an email. He speaks English and Spanish.',
+      foot:"Design demo. Information and listings come from Eric Farmelant's public Compass profile. Eric Farmelant is a Broker Associate with Compass.",
+      fab:'WhatsApp',
+      title:'Eric Farmelant | Miami Luxury Real Estate',
+      desc:'Eric Farmelant, Broker Associate at Compass in Coconut Grove. Luxury homes, new construction and relocation across Miami. English and Spanish.',
+      waMsg:"Hi Eric, I found your website and I'd like to talk about real estate in Miami.",
+      waZone:"Hi Eric, I'd like to talk about real estate in "
+    },
+    es:{
+      tag:'Compass · Coconut Grove',
+      h1:'Miami, desde el <em>Grove</em> hasta Key Biscayne.',
+      sub:'Casas de lujo, obra nueva y relocalización con un Broker Associate de Compass que además es abogado licenciado en el Florida Bar.',
+      ctaWa:'Escribir por WhatsApp', ctaHomes:'Ver transacciones recientes',
+      s1:'En transacciones', s2:'Transacciones representadas', s3:'Años en bienes raíces', s4:'Idiomas',
+      sNote:'Cifras tal como aparecen en el perfil de Eric en Compass.',
+      gEye:'Transacciones recientes', gH:'Casas que Eric ha representado', gP:'Cada tarjeta abre la página original de la propiedad en Compass.',
+      pending:'Pendiente', past:'Venta pasada', view:'Ver propiedad',
+      gNote:'Una selección de propiedades del perfil de Eric en Compass. Las fotos y los precios pertenecen a los listados originales.',
+      zEye:'Barrios', zH:'Dónde trabaja Eric', zP:'Zonas nombradas en el perfil de Eric. Toca una para consultarle.', zAsk:'Consultar',
+      aEye:'Sobre Eric', aH:'Ojo de abogado en cada contrato.',
+      aP1:'Eric Farmelant es Broker Associate en la oficina de Compass en Coconut Grove y miembro fundador del equipo Ibis Group. Ejerció como abogado antes de iniciar su carrera inmobiliaria en 2014.',
+      aP2:'Trabaja con compradores, vendedores y clientes de listados en bienes raíces de lujo, obra nueva y relocalización, y es Military Residential Specialist (MilRES).',
+      f1:'Formación', f1v:"Universidad de Miami, BBA '07 y J.D. '10 (ambos cum laude)",
+      f2:'Licencias', f2v:'Abogado del Florida Bar (2010), agente inmobiliario (2013), broker (2016)',
+      f3:'Idiomas', f3v:'Inglés, español',
+      f4:'Reconocimientos', f4v:'Miami Herald Miami-Dade Favorites, agente inmobiliario "Favorite" 2023, 2024 y 2025. RealTrends Verified Agent 2025 y 2026 (Top 1.5%).',
+      fullProfile:'Perfil completo en Compass', revNote:'Extractos de reseñas de clientes en Compass (en inglés, tal como fueron escritas).',
+      cEye:'Contacto', cH:'Hablemos de tu próximo paso.', cP:'Escríbele a Eric por WhatsApp, llámalo o mándale un correo. Habla inglés y español.',
+      foot:'Demo de diseño. La información y las propiedades provienen del perfil público de Eric Farmelant en Compass. Eric Farmelant es Broker Associate de Compass.',
+      fab:'WhatsApp',
+      title:'Eric Farmelant | Bienes raíces de lujo en Miami',
+      desc:'Eric Farmelant, Broker Associate de Compass en Coconut Grove. Casas de lujo, obra nueva y relocalización en Miami. Inglés y español.',
+      waMsg:'Hola Eric, vi tu sitio web y me gustaría conversar sobre bienes raíces en Miami.',
+      waZone:'Hola Eric, me gustaría conversar sobre bienes raíces en '
+    }
+  };
+  var ZONES=['Coconut Grove','Coral Gables','Key Biscayne','Brickell','Miami Beach','Downtown Miami','Pinecrest','South Miami','Miami Shores','Shenandoah','The Roads','Silver Bluff'];
+  var lang='en';
+  try{var s=localStorage.getItem('ef-lang'); if(s==='en'||s==='es') lang=s;}catch(e){}
+
+  function wa(text){return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(text);}
+  function apply(){
+    var d=I18N[lang];
+    document.documentElement.lang=lang;
+    document.title=d.title;
+    document.querySelector('meta[name=description]').setAttribute('content',d.desc);
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n'); if(d[k]!==undefined) el.textContent=d[k];});
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.getAttribute('data-i18n-html'); if(d[k]!==undefined) el.innerHTML=d[k];});
+    document.querySelectorAll('[data-wa]').forEach(function(a){a.href=wa(d.waMsg);});
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false');});
+    var ul=document.getElementById('zlist'); ul.innerHTML='';
+    ZONES.forEach(function(z){
+      var li=document.createElement('li'); var a=document.createElement('a');
+      a.href=wa(d.waZone+z+'.'); a.target='_blank'; a.rel='noopener';
+      a.appendChild(document.createTextNode(z));
+      var sp=document.createElement('span'); sp.textContent=d.zAsk; a.appendChild(sp);
+      li.appendChild(a); ul.appendChild(li);
+    });
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click',function(){lang=b.dataset.lang; try{localStorage.setItem('ef-lang',lang);}catch(e){} apply();});
+  });
+  apply();
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // hero slideshow
+  var imgs=document.querySelectorAll('.slides img'), dots=document.querySelectorAll('.dots span'), i=0;
+  if(!reduce){
+    setInterval(function(){
+      imgs[i].classList.remove('on'); dots[i].classList.remove('on');
+      i=(i+1)%imgs.length;
+      imgs[i].classList.add('on'); dots[i].classList.add('on');
+    },5500);
+  }
+
+  var topbar=document.querySelector('.top');
+  function onScroll(){topbar.classList.toggle('solid',window.scrollY>40);}
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // reveal on scroll
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);}});},{threshold:.12});
+    rv.forEach(function(el){io.observe(el);});
+  }else{rv.forEach(function(el){el.classList.add('in');});}
+
+  // pinned horizontal gallery (desktop) / scroll-snap (mobile)
+  if(window.gsap && window.ScrollTrigger && !reduce){
+    gsap.registerPlugin(ScrollTrigger);
+    var mm=gsap.matchMedia();
+    mm.add('(min-width: 900px)',function(){
+      var track=document.getElementById('track'), pin=document.getElementById('galPin');
+      var dist=function(){return Math.max(0,track.scrollWidth-window.innerWidth+40);};
+      gsap.to(track,{x:function(){return -dist();},ease:'none',
+        scrollTrigger:{trigger:pin,start:'center center',end:function(){return '+='+dist();},pin:true,scrub:.6,invalidateOnRefresh:true,anticipatePin:1}});
+    });
+    window.addEventListener('load',function(){ScrollTrigger.refresh();});
+  }
+})();
+</script>
+</body>
+</html>
